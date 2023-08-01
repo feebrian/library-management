@@ -15,6 +15,8 @@
     <div class="container mx-auto h-screen items-center flex">
         @yield('container')
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

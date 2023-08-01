@@ -38,6 +38,12 @@
                         <label for="password" class="block text-xl font-inter-bold">Password</label>
                         <input type="password" name="password" id="password"
                             class="border-solid border rounded-[0.3125rem] p-2 h-9 border-[#7E7E7E] w-full">
+                        <div class="form-control">
+                            <label class="flex items-center my-1 gap-x-2">
+                                <input type="checkbox" class="checkbox" id="show-password" />
+                                <span class="label-text">Show Password</span>
+                            </label>
+                        </div>
                         @if ($errors->has('password'))
                             <div class="alert alert-error mt-2">
                                 @include('svg.falied') <span>{{ $errors->first('password') }}</span>
