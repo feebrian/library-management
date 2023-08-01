@@ -51,4 +51,12 @@ class AuthController extends Controller
             'email' => 'Email or password mismatch',
         ])->onlyInput('email');
     }
+
+    public function Logout(Request $request) {
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }

@@ -21,8 +21,10 @@ Route::get('/', function () {
 Route::get('/register', [AuthController::class, 'Index']);
 Route::post('/register', [AuthController::class, 'Register']);
 
-Route::get("/login", [AuthController::class, 'Login'])->name('login');
+Route::get('/login', [AuthController::class, 'Login'])->name('login');
 Route::post('login', [AuthController::class, 'Authenticate']);
+
+Route::post('/logout', [AuthController::class, 'Logout']);
 
 // protected routes
 Route::get("/dashboard", function() {
