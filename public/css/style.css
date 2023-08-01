@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Poppins&display=swap");
+
+.font-poppins-reguler {
+    font-family: "Poppins", "sans-serif";
+    font-weight: 400;
+}
+
+.font-inter-medium {
+    font-family: "Inter", "sans-serif";
+    font-weight: 500;
+}
+
+.font-inter-bold {
+    font-family: "Inter", "sans-serif";
+    font-weight: 700;
+}
+
+.auth-bg {
+    background: url("/images/login-register-background.jpg");
+    background-size: cover;
+}
