@@ -19,7 +19,7 @@ class AuthController extends Controller
         $validated = $request->validate([
             "username" => "required|max:100|unique:users",
             "email" => "required|email|unique:users",
-            "password" => "required|min:8"
+            "password" => "required|min:8|regex:/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/"
         ],[
             "username.required" => "Username is required",
             "email.required" => "Email is required",
