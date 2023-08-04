@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,33 +26,33 @@ Route::get("/login", [AuthController::class, 'Login'])->name('login');
 Route::post('/login', [AuthController::class, 'Authenticate']);
 
 // protected routes
-Route::group(['middleware' => 'auth'], function () {
 
-    Route::get("/dashboard", function() {
+Route::middleware(['auth'])->prefix('dashboard')->group(function () {
+    Route::get('/', function () {
         return view('dashboard.dashboard', ['title' => "Dashboard"]);
     });
 
-    Route::get("/dashboard/members", function() {
-        return view('dashboard.members', ['title' => "Members"]);
+    Route::prefix('/members')->group(function () {
+        Route::get('/', [UserController::class, 'Index']);
     });
 
-    Route::get("/dashboard/books", function() {
+    Route::get('/books', function () {
         return view('dashboard.books', ['title' => "Books"]);
     });
 
-    Route::get("/dashboard/returned", function() {
+    Route::get('/returned', function () {
         return view('dashboard.returned', ['title' => "Returned Books"]);
     });
 
-    Route::get("/dashboard/unreturned", function() {
+    Route::get('/unreturned', function () {
         return view('dashboard.unreturned', ['title' => "Unreturned Books"]);
     });
 
-    Route::get("/dashboard/issued", function() {
+    Route::get('/issued', function () {
         return view('dashboard.issued', ['title' => "Issued"]);
     });
 
-    Route::get("/dashboard/settings", function() {
+    Route::get('/settings', function () {
         return view('dashboard.settings', ['title' => "Settings"]);
     });
 
