@@ -21,6 +21,18 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'status',
+        'user_permission',
+        'type'
+    ];
+
+    /**
+     * Set default value
+     */
+    protected $attributes = [
+        'status' => 'Active',
+        'user_permission' => 'Unregistered User',
+        'type' => '0'
     ];
 
     /**
