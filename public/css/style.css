@@ -1,8 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Poppins:wght@400;500;600;700&display=swap");
 
 .font-poppins-reguler {
     font-family: "Poppins", "sans-serif";
     font-weight: 400;
+}
+
+.font-poppins-medium {
+    font-family: "Poppins", "sans-serif";
+    font-weight: 500;
+}
+
+.font-poppins-bold {
+    font-family: "Poppins", "sans-serif";
+    font-weight: 700;
 }
 
 .font-inter-medium {
